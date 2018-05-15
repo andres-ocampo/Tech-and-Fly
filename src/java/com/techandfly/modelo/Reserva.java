@@ -10,10 +10,15 @@ public class Reserva {
     
     private Vuelo vuelo;
     
-    public Reserva(){
-        
-    }
+ 
 
+    public Reserva(String nombre, String identificacion, int edad, Vuelo vuelo){
+        this.nombre = nombre;
+        this.identificacion = identificacion;
+        this.edad = edad;
+        this.vuelo = vuelo;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -46,5 +51,21 @@ public class Reserva {
         this.vuelo = vuelo;
     }
     
+  
+       public String reservarVuelo(String nombre, String identificacion, int edad, Vuelo vuelo){
+           
+           
+           if (edad >=18){
+               Reserva reservar = new Reserva(nombre, identificacion, edad, vuelo);
+               return "Su reserva fue EXITOSA";
+           } 
+           else{
+               return "Fallo al reservar, no eres mayor de edad!";
+           }
+           
+        
+    }
+       
     
+       
 }
